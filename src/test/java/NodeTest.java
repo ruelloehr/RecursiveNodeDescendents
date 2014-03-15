@@ -15,7 +15,7 @@ public class NodeTest {
     public void testEmptyParent() {
         Node node = new Node();
 
-        int descCount = node.countDescendents(node);
+        int descCount = node.countDescendants(node);
 
         Assert.assertEquals(descCount, 0);
     }
@@ -34,7 +34,7 @@ public class NodeTest {
         node3.nextSibling = node4;
 
 
-        int descCount = parentNode.countDescendents(parentNode);
+        int descCount = parentNode.countDescendants(parentNode);
 
         Assert.assertEquals(descCount, 4);
     }
@@ -69,7 +69,7 @@ public class NodeTest {
         node1.firstChild = node9;
         node9.nextSibling = node10;
 
-        int descCount = parentNode.countDescendents(parentNode);
+        int descCount = parentNode.countDescendants(parentNode);
 
         Assert.assertEquals(descCount, 11);
     }
@@ -113,7 +113,7 @@ public class NodeTest {
         node7.nextSibling=node12;
 
 
-        int descCount = node3.countDescendents(node3);
+        int descCount = node3.countDescendants(node3);
 
         Assert.assertEquals(descCount, 9);
     }

@@ -19,23 +19,23 @@ public class Node {
      * @param node
      * @return
      */
-    public int countDescendents(Node node) {
+    public int countDescendants(Node node) {
 
-        int numParentDescendents = 0;
+        int numParentDescendants = 0;
 
         //if a sibling exists, count the number of its descendents
         if (node.nextSibling != null) {
-            numParentDescendents += countDescendents(node.nextSibling);
-            numParentDescendents++;  //include the sibling itself in the the count
+            numParentDescendants += countDescendants(node.nextSibling);
+            numParentDescendants++;  //include the sibling itself in the the count
         }
 
         //if a child exists, count the number of its descendents
         if (node.firstChild != null) {
-            numParentDescendents += countDescendents(node.firstChild);
-            numParentDescendents++;   //include the child itself in the count
+            numParentDescendants += countDescendants(node.firstChild);
+            numParentDescendants++;   //include the child itself in the count
         }
 
-        return numParentDescendents;
+        return numParentDescendants;
 
     }
 }
