@@ -118,4 +118,48 @@ public class NodeTest {
         Assert.assertEquals(descCount, 9);
     }
 
+
+    /**
+      * Count the descendents of a tree that mimics sample data
+      */
+     @Test
+     public void testWithSampleDataAndSiblingNodes() {
+         Node parentNode = new Node();  //div id="container"
+         Node node1 = new Node();   //a
+         Node node2 = new Node();   //div id="header"
+         Node node3 = new Node();   //div id="header_nav"
+         Node node4 = new Node();   //div class="avatar"
+         Node node5 = new Node();   //img
+         Node node6 = new Node();   //a
+         Node node7 = new Node();   //ul
+         Node node8 = new Node();   //li
+         Node node9 = new Node();   //a
+         Node node10 = new Node();   //li
+         Node node11 = new Node();   //a
+         Node node12 = new Node();   //form
+         Node node13 = new Node();
+
+         parentNode.firstChild  = node1;
+         node1.nextSibling = node2;
+
+         node2.firstChild =  node3;
+         node3.firstChild = node4;
+         node3.nextSibling = node13;
+         node4.firstChild = node5;
+         node4.nextSibling = node6;
+         node6.nextSibling = node7;
+
+         node7.firstChild = node8;
+         node8.firstChild = node9;
+         node8.nextSibling = node10;
+         node10.firstChild = node11;
+
+         node7.nextSibling=node12;
+
+
+         int descCount = node3.countDescendants(node3);
+
+         Assert.assertEquals(9, descCount);
+     }
+
 }
